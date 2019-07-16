@@ -1,0 +1,18 @@
+defaultTasks 'clean', 'build', 'publish', 'installDist'
+mainClassName = "com.barzi.FactoryMain"
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Design Patterns',
+                'Provider': 'BARZI',
+                'Main-Class': "$mainClassName",
+                'Implementation-Version': version
+    }
+}
+
+ext {
+    junitVersion = '4.12'
+}
+dependencies {
+    testCompile "junit:junit:$junitVersion"
+}
